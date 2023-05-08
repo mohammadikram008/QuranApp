@@ -14,6 +14,8 @@ import ProfileChatbot from './components/ProfileChatbot';
 import Testing from './components/Testing';
 import ConfirmProfile from './components/ConfirmProfile';
 import SurahFateha from './components/surahs/Fateha/SurahFateha';
+import Second from './components/Second';
+import SurahBaqrah from './components/surahs/Baqrah/SurahBaqrah';
 
 
 const Stack = createNativeStackNavigator();
@@ -27,6 +29,7 @@ const App = () => {
          <Stack.Screen name="AllSurah" component={AllSurah} options={{headerShown: false}} />
          <Stack.Screen name="English" component={English}  />
          <Stack.Screen name="Other" component={Other}  />
+         <Stack.Screen name="Second" component={Second}  />
          <Stack.Screen name="GetUserInfo" component={GetUserInfo}  />
          <Stack.Screen name="Testing" component={Testing}  />
          {/*Screen thats get user information before moving to chatbot*/}
@@ -34,6 +37,7 @@ const App = () => {
          <Stack.Screen name="ConfirmProfile" component={ConfirmProfile}  />
          <Stack.Screen name="Chatbot" component={Chatbot}  />
          <Stack.Screen name="SurahFateha" component={SurahFateha}  />
+         <Stack.Screen name="SurahBaqrah" component={SurahBaqrah}  />
          <Stack.Screen name="ArabicMain" component={ArabicMain} options={{headerShown: false}} />
 
         </Stack.Navigator>
