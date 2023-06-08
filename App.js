@@ -6,6 +6,7 @@ import Home from './components/Home';
 import AllSurah from './components/AllSurah';
 
 import English from './components/English';
+import Arabic from './components/Arabic';
 import Other from './components/Other';
 import ArabicMain from './components/ArabicMain';
 import GetUserInfo from './components/GetUserInfo';
@@ -33,6 +34,7 @@ const App = () => {
          <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
           <Stack.Screen name="AllSurah" component={AllSurah} options={{headerShown: false}} />
          <Stack.Screen name="English" component={English}  />
+         <Stack.Screen name="Arbic" component={Arabic}  />
          <Stack.Screen name="Other" component={Other}  />
          <Stack.Screen name="ParamImamChatbot" component={ParamImamChatbot}  />
          <Stack.Screen name="AnswerScreen" component={AnswerScreen}  />
