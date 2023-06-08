@@ -16,6 +16,11 @@ import ConfirmProfile from './components/ConfirmProfile';
 import SurahFateha from './components/surahs/Fateha/SurahFateha';
 import Second from './components/Second';
 import SurahBaqrah from './components/surahs/Baqrah/SurahBaqrah';
+import FineTuned from './components/FineTuned';
+import QuestionScreen from './components/QuestionScreen';
+import AnswerScreen from './components/AnswerScreen';
+import ImamChatbot from './components/ImamChatbot';
+import ParamImamChatbot from './components/ParamImamChatbot';
 
 
 const Stack = createNativeStackNavigator();
@@ -26,9 +31,14 @@ const App = () => {
     <NavigationContainer>
         <Stack.Navigator>
          <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
-         <Stack.Screen name="AllSurah" component={AllSurah} options={{headerShown: false}} />
+          <Stack.Screen name="AllSurah" component={AllSurah} options={{headerShown: false}} />
          <Stack.Screen name="English" component={English}  />
          <Stack.Screen name="Other" component={Other}  />
+         <Stack.Screen name="ParamImamChatbot" component={ParamImamChatbot}  />
+         <Stack.Screen name="AnswerScreen" component={AnswerScreen}  />
+         <Stack.Screen name="QuestionScreen" component={QuestionScreen}  />
+         <Stack.Screen name="ImamChatbot" component={ImamChatbot}  />
+         <Stack.Screen name="FineTuned" component={FineTuned}  />
          <Stack.Screen name="Second" component={Second}  />
          <Stack.Screen name="GetUserInfo" component={GetUserInfo}  />
          <Stack.Screen name="Testing" component={Testing}  />
@@ -38,7 +48,7 @@ const App = () => {
          <Stack.Screen name="Chatbot" component={Chatbot}  />
          <Stack.Screen name="SurahFateha" component={SurahFateha}  />
          <Stack.Screen name="SurahBaqrah" component={SurahBaqrah}  />
-         <Stack.Screen name="ArabicMain" component={ArabicMain} options={{headerShown: false}} />
+         <Stack.Screen name="ArabicMain" component={ArabicMain} options={{headerShown: false}} /> 
 
         </Stack.Navigator>
 

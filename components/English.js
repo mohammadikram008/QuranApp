@@ -7,6 +7,9 @@ const English = ({ navigation }) => {
       <View style={{display:'flex',justifyContent:'center',alignItems:'center',marginTop:50}}>
             <Button title="SurahFateha" onPress={() => navigation.navigate('SurahFateha')} />
         </View>
+        <View style={{display:'flex',justifyContent:'center',alignItems:'center',marginTop:50}}>
+            <Button title="SurahBaqrah" onPress={() => navigation.navigate('SurahBaqrah')} />
+        </View>
     </View>
   )
 }
