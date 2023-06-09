@@ -71,8 +71,15 @@ const Home = ({ navigation }) => {
           labelStyle={styles.buttonText}
           onPress={() => navigation.navigate('AllSurah')}
         >
-          <FontAwesome5 name="book" size={20} color="#ffffff" />
-           <Text style={styles.buttonText}>   Read Quran</Text>
+          {/* <FontAwesome5 name="book" size={20} color="#ffffff" /> */}
+         <View style={styles.imgview} >
+
+          <Image
+        source={require('../Assets/book.png')}
+        style={styles.quranImage}
+        />
+           <Text style={styles.buttonText}>Read  Quran </Text>
+        </View>
       
         </TouchableOpacity >
         {/* <TouchableOpacity
@@ -91,8 +98,15 @@ const Home = ({ navigation }) => {
           labelStyle={styles.buttonText}
           onPress={() => navigation.navigate('ImamChatbot')}
         >
-          <FontAwesome5 name="sms" size={20} color="#ffffff" />
-        <Text style={styles.buttonText}> Imam Chat Bot </Text>  
+           <View style={styles.imgview} >
+
+          <Image
+        source={require('../Assets/chat.png')}
+        style={styles.quranImage}
+        />
+          {/* <FontAwesome5 name="sms" size={20} color="#ffffff" /> */}
+        <Text style={styles.buttonText}> Imam ChatBot</Text>  
+        </View>
         </TouchableOpacity>
         {/* <TouchableOpacity
           mode="contained"
@@ -136,18 +150,29 @@ const styles = StyleSheet.create({
     // marginTop:50,
     backgroundColor: '#ffffff',
   },
+  quranImage: {
+    width: '10%',
+    height: '140%',
+    
+  },
+  imgview:{
+    flexDirection: 'row',
+     alignItems: 'center',
+     flexWrap: 'wrap',
+    
+  },
   buttonContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    marginBottom: 20,
+    marginBottom: '40%',
   },
   button: {
     width: '80%',
     height: 100,
-    margin: 5,
+    margin: 15,
     borderRadius: 10,
-    backgroundColor: '#4287f5',
+    backgroundColor: '#708090',
     justifyContent: 'center',
     alignItems: 'center',
     
@@ -156,6 +181,7 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 16,
     fontWeight: 'bold',
+    marginLeft:"8%"
   },
   advertisingContainer: {
     width: '80%',
