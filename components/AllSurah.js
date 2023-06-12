@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, View,TouchableOpacity,Image , ScrollView} from 'react-native'
+import { StyleSheet, Text, View,TouchableOpacity,Image , ScrollView,ActivityIndicator} from 'react-native'
 import axios from 'axios';
+import { useNavigation } from '@react-navigation/native';
 import { Button } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 const AllSurah = ({ navigation }) => {
+  const [loading, setLoading] = useState(false);
 const [value,setValue]=useState("")
-
-
-
+// const navigations = useNavigation();
 
 const data={
   chapters:
@@ -137,8 +137,20 @@ const options = {
 		'X-RapidAPI-Host': 'quran-com.p.rapidapi.com'
 	}
 };
-const handleChange=(props)=>{
-console.log("id",props)
+
+const handleChange=(id)=>{
+  setLoading(true);
+console.log("id",id)
+axios.get(`https://api.alquran.cloud/v1/surah/${id}`).then((res)=>{
+    console.log("data",res)
+    setValue(res.data);
+    setLoading(false);
+    navigation.navigate('ShowSurah', { data: res.data });
+
+  }).catch((error)=>{
+    console.log("ERROR",error)
+  })
+
 }
 const Card = ({ chapter }) => (
   
@@ -171,9 +183,20 @@ const Card = ({ chapter }) => (
  console.log("data",data.chapters)
     return (
       <ScrollView contentContainerStyle={styles.container}>
-      {data.chapters.map((chapter) => (
-        <Card key={chapter.id} chapter={chapter} />
-      ))}
+     
+        
+      {loading ? (
+        <View style={styles.loader}>
+
+          <ActivityIndicator  size="large" color="blue" />
+        </View>
+        ) : (
+          data.chapters.map((chapter) => (
+          <Card key={chapter.id} chapter={chapter} />
+          ))
+        )}
+        
+     
     </ScrollView>
       //   <View style={styles.container}>
       
@@ -300,6 +323,13 @@ const styles = StyleSheet.create({
       paddingVertical: 10,
       borderRadius: 8,
       margin:"4%"
+    },
+    loader:{
+      flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+      width:"100%",
+      height:'100%'
     },
     name: {
       fontSize: 18,

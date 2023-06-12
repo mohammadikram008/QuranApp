@@ -165,7 +165,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    marginBottom: '40%',
+    marginBottom: '30%',
+    marginTop:"10%"
   },
   button: {
     width: '80%',
@@ -185,17 +186,18 @@ const styles = StyleSheet.create({
   },
   advertisingContainer: {
     width: '80%',
-    height: '30%',
+    height: '35%',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#d3d3d3',
     borderRadius: 8,
-    padding: 16,
+    padding: 10,
     shadowColor: '#000000',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
+    shadowOpacity: 1,
     shadowRadius: 10,
     elevation: 50,
+   
   },
   advertisingText: {
     color: '#333333',

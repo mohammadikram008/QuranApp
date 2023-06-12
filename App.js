@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './components/Home';
 import AllSurah from './components/AllSurah';
+import { ShowSurah } from './components/ShowSurah';
 import { SplashScreen } from './components/SplashScreen';
 import English from './components/English';
 import Arabic from './components/Arabic';
@@ -35,6 +36,7 @@ const App = () => {
         <Stack.Screen name="Quran App" component={SplashScreen}  options={{headerShown: false}} />
          <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
           <Stack.Screen name="AllSurah" component={AllSurah} />
+          <Stack.Screen name="ShowSurah" component={ShowSurah} />
          <Stack.Screen name="English" component={English}  />
          <Stack.Screen name="Arbic" component={Arabic}  />
          <Stack.Screen name="Other" component={Other}  />
